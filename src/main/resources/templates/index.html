@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+</head>
+<body>
+    <h3 th:if="${#lists.isEmpty(notes)}">You dont have notes!</h3>
+    <h3 th:unless="${#lists.isEmpty(notes)}">You have <small th:text="${noteCounter}"></small> Notes!</h3>
+    <p th:if="${#lists.isEmpty(notes)}">You don't have notes!</p>
+    <p th:each="note:${notes}"><span th:text="${note.getMessage()}">
+        </span></p>
+    <a href="/notes">Go to notes!</a>
+<table>
+</table>
+</body>
+</html>
